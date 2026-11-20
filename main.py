@@ -4,6 +4,7 @@
   python main.py faucet                  # клейм крана для всех (у кого прошло 2ч)
   python main.py once                    # одна сессия (кран + 2-4 действия) на каждый аккаунт
   python main.py run                     # бесконечный фарм: у каждого аккаунта свой таймер, THREADS потоков
+  python main.py                         # то же, что run (удобно для запуска из IDE)
   python main.py once --only 1-3,7       # выбрать аккаунты (номера строк accounts.txt)
   python main.py once --action open_borrow --n 1   # принудительно одно действие
 """
@@ -89,7 +90,8 @@ def status(accs, state):
 
 def main():
     p = argparse.ArgumentParser()
-    p.add_argument("cmd", choices=["status", "faucet", "once", "run"])
+    p.add_argument("cmd", nargs="?", default="run", choices=["status", "faucet", "once", "run"],
+                   help="по умолчанию run (бесконечный фарм)")
     p.add_argument("--only", help="номера аккаунтов: 1-5,8")
     p.add_argument("--action", help="принудительное действие (open_borrow, sp_deposit, ...)")
     p.add_argument("--n", type=int, help="сколько действий за сессию")
