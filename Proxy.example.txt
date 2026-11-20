@@ -1,0 +1,3 @@
+login:password@proxy.example.com:10100
+login:password@proxy.example.com:10101
+login:password@proxy.example.com:10102

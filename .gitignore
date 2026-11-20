@@ -1,0 +1,18 @@
+# --- приватные данные: НИКОГДА не коммитить ---
+accounts.txt
+Proxy.txt
+proxy.txt
+proxies.txt
+*.key
+.env
+
+# --- состояние и логи ---
+data/
+logs/
+*.tmp
+
+# --- python ---
+__pycache__/
+*.pyc
+.venv/
+venv/
